@@ -1,0 +1,150 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "zotero-tinycast",
+  "title": "Zotero",
+  "description": "Search your Zotero library, open PDFs, and copy citations, BibTeX and Better BibTeX keys. Fast on large libraries, and built to work in Tinycast as well as Raycast.",
+  "icon": "command-icon.png",
+  "author": "richarddemann",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "platforms": [
+    "macOS"
+  ],
+  "commands": [
+    {
+      "name": "search-zotero",
+      "title": "Search Zotero",
+      "subtitle": "Zotero",
+      "description": "Search your Zotero library by title, author, year, tag or citation key",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "zotero_path",
+      "type": "textfield",
+      "required": false,
+      "default": "~/Zotero/zotero.sqlite",
+      "title": "Zotero Database",
+      "description": "Path to zotero.sqlite in your Zotero data directory",
+      "placeholder": "~/Zotero/zotero.sqlite"
+    },
+    {
+      "name": "csl_style",
+      "type": "dropdown",
+      "required": false,
+      "default": "apa",
+      "title": "Citation Style",
+      "description": "Style for bibliography entries and in-text citations. It must be installed in Zotero (Settings → Cite).",
+      "data": [
+        {
+          "title": "APA",
+          "value": "apa"
+        },
+        {
+          "title": "IEEE",
+          "value": "ieee"
+        },
+        {
+          "title": "Nature",
+          "value": "nature"
+        },
+        {
+          "title": "AMA (American Medical Association)",
+          "value": "american-medical-association"
+        },
+        {
+          "title": "NLM / Vancouver (citation-sequence)",
+          "value": "nlm-citation-sequence"
+        },
+        {
+          "title": "Chicago (author-date)",
+          "value": "chicago-author-date"
+        },
+        {
+          "title": "Chicago (notes & bibliography)",
+          "value": "chicago-notes-bibliography"
+        },
+        {
+          "title": "Chicago (shortened notes)",
+          "value": "chicago-shortened-notes-bibliography"
+        },
+        {
+          "title": "Harvard (Cite Them Right)",
+          "value": "harvard-cite-them-right"
+        },
+        {
+          "title": "Elsevier Harvard",
+          "value": "elsevier-harvard"
+        },
+        {
+          "title": "MLA",
+          "value": "modern-language-association"
+        },
+        {
+          "title": "MHRA (notes)",
+          "value": "mhra-notes"
+        },
+        {
+          "title": "ACS (American Chemical Society)",
+          "value": "american-chemical-society"
+        },
+        {
+          "title": "APSA (American Political Science Association)",
+          "value": "american-political-science-association"
+        },
+        {
+          "title": "ASA (American Sociological Association)",
+          "value": "american-sociological-association"
+        }
+      ]
+    },
+    {
+      "name": "primary_action",
+      "type": "dropdown",
+      "required": false,
+      "default": "open_pdf",
+      "title": "Primary Action",
+      "description": "What pressing Return does",
+      "data": [
+        {
+          "title": "Open PDF in default app",
+          "value": "open_pdf"
+        },
+        {
+          "title": "Open PDF in Zotero",
+          "value": "open_pdf_zotero"
+        },
+        {
+          "title": "Show item in Zotero",
+          "value": "open_zotero"
+        }
+      ]
+    },
+    {
+      "name": "quote_pdf_path",
+      "type": "checkbox",
+      "required": false,
+      "default": false,
+      "title": "PDF Path Copy",
+      "label": "Wrap the copied PDF path in quotation marks",
+      "description": "Wrap the copied PDF path in quotation marks"
+    }
+  ],
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "typecheck": "tsc --noEmit",
+    "install-tinycast": "ray build -e dist -o \"$HOME/Library/Application Support/com.tinycast.app/extensions/zotero-tinycast\""
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@raycast/api": "^2.4.1"
+  }
+}
