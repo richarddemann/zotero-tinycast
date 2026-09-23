@@ -11,9 +11,10 @@ citations, BibTeX and citation keys.
 
 ![Searching a Zotero library in Tinycast](media/screenshot.png)
 
-The Raycast Store's Zotero extension gets stuck on **Loading…** in Tinycast, because it loads the whole
-database into JavaScript. This one asks macOS's `sqlite3` for just the item data instead, so even large
-libraries open instantly.
+The Raycast Store's Zotero extension gets stuck on **Loading…** in Tinycast. Its SQLite engine runs on
+WebAssembly, and Tinycast currently never finishes loading WebAssembly
+([fix proposed](https://github.com/abue-ammar/tinycast/issues/1056)). This one reads your library with
+macOS's own `sqlite3` instead, so it works today and opens instantly, even for large libraries.
 
 ## Install
 
