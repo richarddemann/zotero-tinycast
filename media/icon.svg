@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EE4B45"/>
+      <stop offset="1" stop-color="#B3172B"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="cut">
+      <rect width="512" height="512" fill="white"/>
+      <circle cx="342" cy="342" r="90" fill="black"/>
+    </mask>
+  </defs>
+  <rect x="32" y="32" width="448" height="448" rx="104" fill="url(#bg)"/>
+  <rect x="32" y="32" width="448" height="448" rx="104" fill="url(#shine)"/>
+  <polyline mask="url(#cut)" points="140,142 356,142 140,358 356,358"
+            fill="none" stroke="#FFFFFF" stroke-width="54" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="342" cy="342" r="56" fill="none" stroke="#FFFFFF" stroke-width="26"/>
+  <line x1="384" y1="384" x2="420" y2="420" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round"/>
+</svg>
